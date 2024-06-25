@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+header{
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    position: relative;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li{
+    cursor: pointer;
+    position: relative;
+}
+
+li.index a{
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.dropdown .content{
+    color:white;
+    display: none;
+    position: absolute;
+    top: 100%; /* Posiciona el contenido justo debajo del header */
+    background-color: #007BFF;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px black;
+    z-index: 1;
+}
+
+
+.dropdown:hover .content,
+.dropdown .content:hover {
+    display: block;
+}
+
+/* Tabla */
+table{
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td{
+    text-align: left;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.5rem;
+}
+
+.btn-container {
+    display:flex;
+    gap:10px;
+}
+
+td button{
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 70px;
+    border-radius: 5px;
+}
+
+button.actualizar{
+    background-color: green;
+}
+
+button.eliminar{
+    background-color: red;
+}
+
+#btnLogout{
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+/* Forms */
+form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.actualizar-odontologo-hide{
+    display: none;
+}
+
+.actualizar-paciente-hide{
+    display: none;
+}
+
+.actualizar-turno-hide{
+    display: none;
+}

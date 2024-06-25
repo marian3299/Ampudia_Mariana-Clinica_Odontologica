@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Home</title>
+  <script type="module" src="./logout.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li class="index"><a href="./index.html">Inicio</a></li>
+      <li class="dropdown">Pacientes
+        <div class="content">
+          <a href="./post_pacientes.html">Registrar</a>
+          <a href="./get_pacientes.html">Listar</a>
+        </div>
+      </li>
+      <li id="odontologos" class="dropdown">
+        Odontologos
+        <div class="content">
+          <a href="./post_odontologos.html">Registrar</a>
+          <a href="get_odontologos.html">Listar</a>
+        </div>
+      </li>
+      <li id="turnos" class="dropdown">
+        Turnos
+        <div class="content">
+          <a href="./post_turnos.html">Registrar</a>
+          <a href="./rud_turnos.html">Listar</a>
+        </div>
+      </li>
+    </ul>
+    <button id="btnLogout">Logout</button>
+  </nav>
+</header>
+<h1>Bienvenido a la Clinica Odontologica</h1>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Turnos</title>
+    <script type="text/javascript" src="./rud_turnos.js"></script>
+    <script type="module" src="./logout.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="index"><a href="./index.html">Inicio</a></li>
+            <li class="dropdown">Pacientes
+                <div class="content">
+                    <a href="./post_pacientes.html">Registrar</a>
+                    <a href="./get_pacientes.html">Listar</a>
+                </div>
+            </li>
+            <li id="odontologos" class="dropdown">
+                Odontologos
+                <div class="content">
+                    <a href="./post_odontologos.html">Registrar</a>
+                    <a href="./get_odontologos.html">Listar</a>
+                </div>
+            </li>
+            <li id="turnos" class="dropdown">
+                Turnos
+                <div class="content">
+                    <a href="./post_turnos.html">Registrar</a>
+                    <a href="./rud_turnos.html">Listar</a>
+                </div>
+            </li>
+        </ul>
+        <button id="btnLogout">Logout</button>
+    </nav>
+</header>
+
+<main>
+    <h1>Turnos</h1>
+    <table id="turno-table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Paciente</th>
+            <th>Odontologo</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Accion</th>
+        </tr>
+        </thead>
+        <tbody class="turno-table-body">
+
+        </tbody>
+    </table>
+    <form action="" class="actualizar-turno-hide actualizar-turno">
+
+        <label>Odontologo</label>
+        <select name="odontologo-update-select" id="odontologo-update-select">
+            <option value="">Seleccione un odontologo</option>
+        </select>
+
+        <label>Paciente</label>
+        <select name="paciente-update-select" id="paciente-update-select">
+            <option value="">Seleccione un paciente</option>
+        </select>
+
+        <label>Fecha</label>
+        <input type="date" name="" id="turno-update-date">
+
+        <label>Hora</label>
+        <input type="time" id="turno-update-time">
+
+        <button type="submit">Enviar</button>
+
+    </form>
+</main>
+</body>
+</html>

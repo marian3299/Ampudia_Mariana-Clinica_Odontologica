@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Odontologos</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="index"><a href="./index.html">Inicio</a></li>
+            <li class="dropdown">Pacientes
+                <div class="content">
+                    <a href="./post_pacientes.html">Registrar</a>
+                    <a href="./get_pacientes.html">Listar</a>
+                </div>
+            </li>
+            <li id="odontologos" class="dropdown">
+                Odontologos
+                <div class="content">
+                    <a href="./post_odontologos.html">Registrar</a>
+                    <a href="./get_odontologos.html">Listar</a>
+                </div>
+            </li>
+            <li id="turnos" class="dropdown">
+                Turnos
+                <div class="content">
+                    <a href="./post_turnos.html">Registrar</a>
+                    <a href="./rud_turnos.html">Listar</a>
+                </div>
+            </li>
+        </ul>
+        <button id="btnLogout">Logout</button>
+    </nav>
+</header>
+<main>
+    <h1>Odontologos</h1>
+    <table id="odontologo-table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Matricula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody class="odontologo-table-body">
+
+        </tbody>
+    </table>
+
+    <form action="" class="actualizar-odontologo-hide actualizar-odontologo">
+
+        <label>Matricula</label>
+        <input type="text" id="odontologo-update-matricula">
+
+        <label>Nombre</label>
+        <input type="text" id="odontologo-update-nombre">
+
+        <label>Apellido</label>
+        <input type="text" id="odontologo-update-apellido">
+
+        <button type="submit">Enviar</button>
+
+    </form>
+</main>
+
+<script type="module" src="./get_odontologos.js"></script>
+<script type="module" src="./logout.js"></script>
+</body>
+</html>

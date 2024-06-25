@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error de Acceso</title>
+    <link rel="stylesheet" href="../index.css">
+    <script type="module" src="../logout.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="index"><a href="./index.html">Inicio</a></li>
+            <li class="dropdown">Pacientes
+                <div class="content">
+                    <a href="../post_pacientes.html">Registrar</a>
+                    <a href="../get_pacientes.html">Listar</a>
+                </div>
+            </li>
+            <li id="odontologos" class="dropdown">
+                Odontologos
+                <div class="content">
+                    <a href="../post_odontologos.html">Registrar</a>
+                    <a href="../get_odontologos.html">Listar</a>
+                </div>
+            </li>
+            <li id="turnos" class="dropdown">
+                Turnos
+                <div class="content">
+                    <a href="../post_turnos.html">Registrar</a>
+                    <a href="../rud_turnos.html">Listar</a>
+                </div>
+            </li>
+        </ul>
+        <button id="btnLogout">Logout</button>
+    </nav>
+</header>
+
+<main>
+    <div class="error-message">
+        <h1>Acceso Denegado</h1>
+        <p>No tienes permisos para acceder a esta página.</p>
+        <p>Por favor, intenta navegar a otra sección utilizando el menú de navegación.</p>
+    </div>
+</main>
+
+
+</body>
+</html>
