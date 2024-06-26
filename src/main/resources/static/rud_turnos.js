@@ -11,8 +11,10 @@ window.addEventListener('load', function () {
                 const table = document.getElementById('turno-table');
                 const tableBody = document.querySelector('.turno-table-body');
 
+                console.log(data);
+
                 data.forEach(turno => {
-                    const {id, paciente, odontologo, fecha} = turno;
+                    const { id, fecha, odontologoDTO, pacienteDTO } = turno;
                     let dateTimeString = fecha;
                     let [date,time] = dateTimeString.split('T');
 
@@ -28,8 +30,8 @@ window.addEventListener('load', function () {
                     const btnUpdate = document.createElement('button');
 
                     cellId.textContent = id;
-                    cellPaciente.textContent = `${paciente.nombre} ${paciente.apellido}`;
-                    cellOdontologo.textContent = `${odontologo.nombre} ${odontologo.apellido}`;
+                    cellPaciente.textContent = `${pacienteDTO.nombre} ${pacienteDTO.apellido}`;
+                    cellOdontologo.textContent = `${odontologoDTO.nombre} ${odontologoDTO.apellido}`;
                     cellFecha.textContent = date;
                     cellHora.textContent = time;
                     btnDelete.textContent = "Elminar";
@@ -100,7 +102,7 @@ window.addEventListener('load', function () {
         const selectPacientes = document.getElementById('paciente-update-select');
         const selectOdontologos = document.getElementById('odontologo-update-select');
         const url = "/turnos";
-        const urlPacientes = '/pacientes';
+        const urlPacientes = '/pacientes/pacientesDTO';
         const urlOdontologos = '/odontologos';
 
 

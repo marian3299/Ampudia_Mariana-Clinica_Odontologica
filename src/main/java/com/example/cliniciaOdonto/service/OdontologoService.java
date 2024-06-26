@@ -1,5 +1,6 @@
 package com.example.cliniciaOdonto.service;
 
+import com.example.cliniciaOdonto.dto.OdontologoDTO;
 import com.example.cliniciaOdonto.entity.Odontologo;
 import com.example.cliniciaOdonto.repository.OdontologoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,14 @@ public class OdontologoService {
 
     public void actualizarOdontologo(Odontologo odontologo){
         odontologoRepository.save(odontologo);
+    }
+
+    public OdontologoDTO odotologoAodontologoDTO(Odontologo odontologo){
+        OdontologoDTO odontologoDTO = new OdontologoDTO();
+        odontologoDTO.setId(odontologo.getId());
+        odontologoDTO.setNombre(odontologo.getNombre());
+        odontologoDTO.setApellido(odontologo.getApellido());
+        return odontologoDTO;
     }
 
 

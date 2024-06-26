@@ -1,5 +1,7 @@
 package com.example.cliniciaOdonto.controller;
 
+import com.example.cliniciaOdonto.dto.PacienteDTO;
+import com.example.cliniciaOdonto.dto.TurnoDTO;
 import com.example.cliniciaOdonto.entity.Odontologo;
 import com.example.cliniciaOdonto.entity.Paciente;
 import com.example.cliniciaOdonto.entity.Turno;
@@ -10,7 +12,6 @@ import com.example.cliniciaOdonto.service.PacienteService;
 import com.example.cliniciaOdonto.service.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/turnos")
-public class TurnoController {
+public class
+TurnoController {
     @Autowired
     private TurnoService turnoService;
 
@@ -43,7 +45,7 @@ public class TurnoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Turno>> buscarTodos(){
+    public ResponseEntity<List<TurnoDTO>> buscarTodos(){
         return ResponseEntity.ok(turnoService.listarTodos());
     }
 

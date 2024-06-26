@@ -1,12 +1,13 @@
 package com.example.cliniciaOdonto.dto;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class TurnoDTO {
     private Long id;
-    private LocalDate fecha;
-    private Long pacienteId;
-    private Long odontologoId;
+    private PacienteDTO paciente;
+    private OdontologoDTO odontologo;
+    private LocalDateTime fecha;
 
     public Long getId() {
         return id;
@@ -16,27 +17,27 @@ public class TurnoDTO {
         this.id = id;
     }
 
-    public LocalDate getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 
-    public Long getPacienteId() {
-        return pacienteId;
+    public PacienteDTO getPacienteDTO() {
+        return paciente;
     }
 
-    public void setPacienteId(Long pacienteId) {
-        this.pacienteId = pacienteId;
+    public void setPacienteDTO(PacienteDTO pacienteDTO) {
+        this.paciente = pacienteDTO;
     }
 
-    public Long getOdontologoId() {
-        return odontologoId;
+    public OdontologoDTO getOdontologoDTO() {
+        return odontologo;
     }
 
-    public void setOdontologoId(Long odontologoId) {
-        this.odontologoId = odontologoId;
+    public void setOdontologoDTO(OdontologoDTO odontologoDTO) {
+        this.odontologo = odontologoDTO;
     }
 }

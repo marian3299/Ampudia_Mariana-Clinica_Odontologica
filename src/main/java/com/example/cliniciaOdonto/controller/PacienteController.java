@@ -1,5 +1,6 @@
 package com.example.cliniciaOdonto.controller;
 
+import com.example.cliniciaOdonto.dto.PacienteDTO;
 import com.example.cliniciaOdonto.entity.Paciente;
 import com.example.cliniciaOdonto.exception.BadRequestException;
 import com.example.cliniciaOdonto.exception.ResourceNotFoundException;
@@ -31,6 +32,21 @@ public class PacienteController {
         }else {
             throw new ResourceNotFoundException("Paciente no encontrado");
         }
+    }
+
+    @GetMapping("/pacienteDTO/{id}")
+    public ResponseEntity<Optional<PacienteDTO>> buscarPorIdDTO(@PathVariable Long id) throws ResourceNotFoundException{
+        Optional<PacienteDTO> pacienteDTObuscado = pacienteService.buscarPorIdDTO(id);
+        if(pacienteDTObuscado.isPresent()){
+            return ResponseEntity.ok(pacienteDTObuscado);
+        }else {
+            throw new ResourceNotFoundException("Paciente no encontrado");
+        }
+    }
+
+    @GetMapping("/pacientesDTO")
+    public ResponseEntity<List<PacienteDTO>> buscarTodosDTO(){
+        return ResponseEntity.ok(pacienteService.buscarTodosDTO());
     }
 
     @PostMapping

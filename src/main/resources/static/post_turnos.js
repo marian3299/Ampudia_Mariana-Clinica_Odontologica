@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
     const url = '/turnos';
-    const urlPacientes = '/pacientes';
+    const urlPacientes = '/pacientes/pacientesDTO';
     const urlOdontologos = '/odontologos';
     const form = document.querySelector('.turno-form');
     const selectPacientes = document.getElementById('paciente-select');

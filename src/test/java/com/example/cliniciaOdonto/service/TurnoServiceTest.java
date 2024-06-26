@@ -1,5 +1,6 @@
 package com.example.cliniciaOdonto.service;
 
+import com.example.cliniciaOdonto.dto.TurnoDTO;
 import com.example.cliniciaOdonto.entity.Odontologo;
 import com.example.cliniciaOdonto.entity.Paciente;
 import com.example.cliniciaOdonto.entity.Turno;
@@ -43,7 +44,7 @@ public class TurnoServiceTest {
     @Test
     @Order(3)
     public void buscarTodos(){
-        List<Turno> turnos = turnoService.listarTodos();
+        List<TurnoDTO> turnos = turnoService.listarTodos();
         Assertions.assertEquals(3, turnos.size());
     }
 

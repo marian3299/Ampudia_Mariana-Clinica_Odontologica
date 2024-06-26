@@ -5,7 +5,6 @@ import com.example.cliniciaOdonto.repository.OdontologoRepository;
 import com.example.cliniciaOdonto.repository.PacienteRepository;
 import com.example.cliniciaOdonto.repository.TurnoRepository;
 import com.example.cliniciaOdonto.repository.UsuarioRepository;
-import com.example.cliniciaOdonto.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -63,5 +62,6 @@ public class DatosIniciales implements ApplicationRunner {
         String passCifradoAdmin =  passwordEncoder.encode(passSinCifrarAdmin);
         Usuario usuario1 = new Usuario("andres", "andres3299", "admin@admin.com", passCifradoAdmin, UsuarioRole.ROLE_ADMIN);
         usuarioRepository.save(usuario1);
+
     }
 }
