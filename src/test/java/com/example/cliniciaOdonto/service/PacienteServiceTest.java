@@ -20,13 +20,13 @@ public class PacienteServiceTest {
     public void guardarPaciente(){
         Paciente paciente = new Paciente("Jorgito", "Pereyra", "11111", LocalDate.of(2024,6,20), new Domicilio("alga",123, "ceiba", "Merida"));
         Paciente pacienteGuardado = pacienteService.guardarPaciente(paciente);
-        Assertions.assertEquals(1L,pacienteGuardado.getId());
+        Assertions.assertEquals(3L,pacienteGuardado.getId());
     }
 
     @Test
     @Order(2)
     public void buscarPacientePorID(){
-        Long id = 1L;
+        Long id = 3L;
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(id);
         Assertions.assertNotNull(pacienteBuscado.get());
     }
@@ -34,7 +34,7 @@ public class PacienteServiceTest {
     @Test
     @Order(3)
     public void actualizarPaciente(){
-        Long id = 1L;
+        Long id = 3L;
         Paciente paciente = new Paciente(id,"German", "Fraire", "11111", LocalDate.of(2024,6,20), new Domicilio("alga",123, "ceiba", "Merida"));
         pacienteService.actualizarPaciente(paciente);
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(id);
@@ -45,14 +45,14 @@ public class PacienteServiceTest {
     @Order(4)
     public void lisarTodos(){
         List<Paciente> pacientes = pacienteService.buscarTodos();
-        Assertions.assertEquals(1, pacientes.size());
+        Assertions.assertEquals(3, pacientes.size());
     }
 
     @Test
     @Order(5)
     public void eliminarPaciente(){
-        pacienteService.eliminarPaciente(1L);
-        Optional<Paciente> pacienteEliminado = pacienteService.buscarPorID(1L);
+        pacienteService.eliminarPaciente(3L);
+        Optional<Paciente> pacienteEliminado = pacienteService.buscarPorID(3L);
         Assertions.assertFalse(pacienteEliminado.isPresent());
     }
 }

@@ -1,12 +1,15 @@
 package com.example.cliniciaOdonto.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "odontologos")
+@Schema(description = "Entity que represente a un odontologo")
 public class Odontologo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Valor unicco por entida, auto-incremental")
     private Long id;
     @Column
     private Integer matricula;
@@ -20,6 +23,13 @@ public class Odontologo {
     }
 
     public Odontologo(Integer matricula, String nombre, String apellido) {
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Odontologo(Long id, Integer matricula, String nombre, String apellido) {
+        this.id = id;
         this.matricula = matricula;
         this.nombre = nombre;
         this.apellido = apellido;

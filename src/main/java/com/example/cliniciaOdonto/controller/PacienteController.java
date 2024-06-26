@@ -1,6 +1,7 @@
 package com.example.cliniciaOdonto.controller;
 
 import com.example.cliniciaOdonto.entity.Paciente;
+import com.example.cliniciaOdonto.exception.BadRequestException;
 import com.example.cliniciaOdonto.exception.ResourceNotFoundException;
 import com.example.cliniciaOdonto.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,12 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Paciente>> buscarPorId(@PathVariable("id") Long id){
+    public ResponseEntity<Optional<Paciente>> buscarPorId(@PathVariable("id") Long id) throws ResourceNotFoundException{
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(id);
         if(pacienteBuscado.isPresent()){
             return ResponseEntity.ok(pacienteBuscado);
         }else {
-            return ResponseEntity.notFound().build();
+            throw new ResourceNotFoundException("Paciente no encontrado");
         }
     }
 
@@ -38,14 +39,14 @@ public class PacienteController {
     }
 
     @PutMapping
-    public ResponseEntity<String> actualizarPaciente(@RequestBody Paciente paciente){
+    public ResponseEntity<String> actualizarPaciente(@RequestBody Paciente paciente) throws BadRequestException {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPorID(paciente.getId());
 
         if(pacienteBuscado.isPresent()){
             pacienteService.actualizarPaciente(paciente);
             return ResponseEntity.ok("Paciente actualizado con exito");
         }else {
-            return ResponseEntity.badRequest().build();
+            throw new BadRequestException("Datos incorrectos");
         }
     }
 
@@ -58,7 +59,6 @@ public class PacienteController {
             return ResponseEntity.ok("Paciente eliminado con exito");
         }else {
             throw new ResourceNotFoundException("Paciente no encontrado");
-            //return ResponseEntity.notFound().build();
         }
     }
 }
