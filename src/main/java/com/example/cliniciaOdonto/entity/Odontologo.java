@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "odontologos")
-@Schema(description = "Entity que represente a un odontologo")
+@Schema(description = "Entity que representa a un odontologo")
 public class Odontologo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(description = "Valor unicco por entida, auto-incremental")
+    @Schema(description = "Valor unicco por entidad, auto-incremental")
     private Long id;
     @Column
     private Integer matricula;

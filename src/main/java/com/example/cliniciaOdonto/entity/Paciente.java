@@ -1,14 +1,17 @@
 package com.example.cliniciaOdonto.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "pacientes")
+@Schema(description = "Entity that represents a Paciente")
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique value per entity, auto-incremental")
     private Long id;
     @Column
     private String nombre;
